@@ -1,0 +1,9 @@
+
+.relay/state.json
+
+.relay/backups/
+.build/
+dist/
+.DS_Store
+.swiftpm/
+*.xcuserstate

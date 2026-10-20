@@ -1,0 +1,19 @@
+name: Build and test
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  macos:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test conversion and file safety
+        run: swift test
+      - name: Package native application
+        run: bash scripts/build-app.sh release
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Forma-macOS
+          path: dist/Forma-macOS.zip
