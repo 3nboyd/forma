@@ -4,6 +4,8 @@
 
 <img src="Resources/AppIcon.png" alt="Forma app icon" width="96">
 
+![Forma workspace](docs/workspace.jpg)
+
 ## Get Forma
 
 Download **Forma-macOS.zip** from [Releases](https://github.com/3nboyd/forma/releases), unzip, and move **Forma.app** into Applications. Requires **macOS 15 or later**. The first release binary is for **Apple silicon**; Intel users can build from source.
