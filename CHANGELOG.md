@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.0.0
+
+- Replaced the tool sidebar with a single file-first workspace.
+- Automatic input detection, compatible actions, and selectable output-format tiles.
+- Embedded folder browsing, window-wide file drops, and Finder Open With integration.
+- Compact controls with expandable resize, rotation, trim, and PDF password settings.
+- Source-folder export defaults and mixed-batch file-type filtering.
+- Imports received during conversion are retained for the next batch.
+- Added capability and workspace behavior tests.
+
 ## 1.0.0
 
 - Initial native macOS release with twelve local file tools.

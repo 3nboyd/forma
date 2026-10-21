@@ -1,18 +1,27 @@
 # Forma
 
-**A little order. Every file.** A free, open-source Mac workspace for local file conversion, image edits, PDF tools, and file organization. No accounts, uploads, subscriptions, or conversion quotas.
+Drop a file, pick a format, convert. Forma is a free, open-source Mac app for local conversions, image edits, PDF tools, and file organization.
 
 <img src="Resources/AppIcon.png" alt="Forma app icon" width="96">
 
-![Forma workspace](docs/workspace.jpg)
+![Forma 2 workspace](docs/workspace-v2.jpg)
 
 ## Get Forma
 
-Download **Forma-macOS.zip** from [Releases](https://github.com/3nboyd/forma/releases), unzip, and move **Forma.app** into Applications. Requires **macOS 15 or later**. The first release binary is for **Apple silicon**; Intel users can build from source.
+Download **Forma-macOS.zip** from [Releases](https://github.com/3nboyd/forma/releases), unzip, and move **Forma.app** into Applications. Requires **macOS 15 or later**. The downloadable binary is for **Apple silicon**; Intel users can build from source.
 
 This community build is ad-hoc signed, **not Apple-notarized**. macOS may block first launch. Only if you trust this source, use System Settings → Privacy & Security → Open Anyway after attempting to open it. Building locally is another option.
 
-## One workspace, twelve tools
+## What's new in Forma 2
+
+- One workspace: no tool sidebar or category tabs.
+- Finder **Open With → Forma**, drag-and-drop anywhere in the workspace, or an inline folder browser.
+- File detection shows compatible format tiles and actions automatically.
+- Quality, crop, and filters stay close at hand. Resize, rotation, trim, and passwords expand when needed.
+- Exports default to the source folder and get unique names.
+- Mixed batches stay in the queue; select a file type to convert that group.
+
+## Tools
 
 | Tool | What it does |
 | --- | --- |
@@ -33,10 +42,13 @@ Audio and video tools require [FFmpeg](https://ffmpeg.org/). Install separately 
 
 ## How to use
 
-1. Pick a tool in the sidebar.
-2. Drop files into the workspace, or press **⌘O**.
-3. Adjust the output settings and choose a destination.
-4. Click the action button or press **⌘Return**. Reveal the results in Finder.
+1. Drop files into Forma, or right-click them in Finder and choose **Open With → Forma**. **⌘O** opens the inline browser.
+2. Click an output-format tile. Relevant settings appear automatically.
+3. Click **Convert** or press **⌘Return**. Results save alongside the source unless you choose another folder.
+
+The action menu exposes the other tools available for the selected files. For a mixed batch, use the small file-type filters to select a convertible group. **Browse** opens the embedded folder browser; enter a folder path to reach other locations or external disks. Finder discovers the app after it is placed in Applications and opened once; **Open With → Other…** can select it if the menu has not refreshed.
+
+![Embedded folder browser](docs/browser-v2.jpg)
 
 Conversions preserve originals. Existing destination names get numbered suffixes. Failed conversions clean up staged files. Moving uses exclusive atomic filesystem renames, so edits through open file handles follow the moved file. If a batch move fails, Forma attempts to restore completed moves without overwriting anything and reports preserved locations if restoration cannot finish. Moving between disks is intentionally unsupported; copy and verify your files instead.
 
@@ -48,7 +60,7 @@ Conversions preserve originals. Existing destination names get numbered suffixes
 - JPEG uses a white background for transparent images. Quality controls primarily affect lossy formats; lossless formats preserve their encoding characteristics.
 - PDF text extraction does not perform OCR. Converting a PDF back into an editable Word document is not supported. Unlocking requires the password; it does not crack encryption.
 - Document layout fidelity depends on macOS textutil. Complex Office documents may change appearance. External HTML resources are not loaded, and FFmpeg network protocols are disabled. Spreadsheet and presentation conversion, RTFD bundles, archive extraction, and cloud transfers are not supported.
-- Operations run locally in the background. The first version has an indeterminate activity indicator and no mid-operation cancel. Large batches may need significant temporary disk space.
+- Operations run locally in the background with an indeterminate activity indicator and no mid-operation cancel. Large batches may need significant temporary disk space.
 - PDF passwords are used in memory for the current operation and are never written to app preferences or logs. Clear the password field after use if you share your screen.
 
 ## Build and test

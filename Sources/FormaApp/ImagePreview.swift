@@ -14,7 +14,6 @@ struct ImagePreview: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
             HStack {
-                Text("LIVE PREVIEW").font(.system(size: 10, weight: .semibold)).tracking(1.4)
                 Spacer()
                 Text(size).font(.system(size: 10)).foregroundStyle(.secondary)
             }
@@ -23,9 +22,8 @@ struct ImagePreview: View {
                 if let image {
                     Image(nsImage: image).resizable().scaledToFit().padding(14).accessibilityLabel("Preview of \(url.lastPathComponent) with current image settings")
                 } else if loading { ProgressView().controlSize(.small) }
-                else { Label("Preview unavailable for this file", systemImage: "photo").font(.system(size: 11)).foregroundStyle(.secondary) }
-            }.frame(height: 230).overlay(RoundedRectangle(cornerRadius: 12).strokeBorder(.primary.opacity(0.08)))
-            Text("Preview shows shape, size, rotation, and filter. Export quality affects the saved file.").font(.system(size: 10)).foregroundStyle(.secondary)
+                else { Label("Preview unavailable", systemImage: "photo").font(.system(size: 11)).foregroundStyle(.secondary) }
+            }.frame(height: 200).overlay(RoundedRectangle(cornerRadius: 12).strokeBorder(.primary.opacity(0.08)))
         }
         .task(id: key) {
             loading = true

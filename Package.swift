@@ -8,7 +8,8 @@ let package = Package(
     targets: [
         .target(name: "FormaCore"),
         .executableTarget(name: "FormaApp", dependencies: ["FormaCore"]),
-        .testTarget(name: "FormaCoreTests", dependencies: ["FormaCore"])
+        .testTarget(name: "FormaCoreTests", dependencies: ["FormaCore"]),
+        .testTarget(name: "FormaAppTests", dependencies: ["FormaApp", "FormaCore"])
     ],
     swiftLanguageModes: [.v5]
 )

@@ -6,8 +6,8 @@
 <key>CFBundleIdentifier</key><string>io.github.3nboyd.forma</string>
 <key>CFBundleExecutable</key><string>Forma</string>
 <key>CFBundlePackageType</key><string>APPL</string>
-<key>CFBundleShortVersionString</key><string>1.0.0</string>
-<key>CFBundleVersion</key><string>1</string>
+<key>CFBundleShortVersionString</key><string>2.0.0</string>
+<key>CFBundleVersion</key><string>2</string>
 <key>CFBundleIconFile</key><string>AppIcon</string>
 <key>LSMinimumSystemVersion</key><string>15.0</string>
 <key>NSHighResolutionCapable</key><true/>
@@ -16,7 +16,12 @@
 <key>CFBundleTypeName</key><string>Files for conversion</string>
 <key>CFBundleTypeRole</key><string>Viewer</string>
 <key>LSHandlerRank</key><string>Alternate</string>
-<key>LSItemContentTypes</key><array><string>public.data</string><string>public.folder</string></array>
+<key>LSItemContentTypes</key><array>
+<string>public.image</string><string>com.adobe.pdf</string>
+<string>public.movie</string><string>public.audio</string>
+<string>public.text</string><string>public.composite-content</string>
+<string>public.archive</string><string>public.data</string><string>public.folder</string>
+</array>
 </dict></array>
 <key>NSHumanReadableCopyright</key><string>Copyright © 2026 Forma contributors. MIT License.</string>
 </dict></plist>
