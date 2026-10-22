@@ -66,7 +66,7 @@ Conversions preserve originals. Existing destination names get numbered suffixes
 - Document layout fidelity depends on macOS textutil. Complex Office documents may change appearance. External HTML resources are not loaded, and FFmpeg network protocols are disabled. Spreadsheet and presentation conversion, RTFD bundles, archive extraction, and cloud transfers are not supported.
 ### Processing
 
-- Operations run locally in the background with an indeterminate activity indicator and no mid-operation cancel. Large batches may need significant temporary disk space.
+- Operations run locally in the background with an activity indicator without a percentage and no mid-operation cancel. Large batches may need significant temporary disk space.
 - PDF passwords are used in memory for the current operation and are never written to app preferences or logs. Clear the password field after use if you share your screen.
 
 ## Build and test
