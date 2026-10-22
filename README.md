@@ -38,7 +38,7 @@ This community build is ad-hoc signed, **not Apple-notarized**. macOS may block 
 | Move files | Move files and folders on the same disk without making a second copy; requires confirmation |
 | Create ZIP | Bundle files and folders using macOS ditto |
 
-Audio and video tools require [FFmpeg](https://ffmpeg.org/). Install separately with `brew install ffmpeg`. Forma detects `/opt/homebrew/bin/ffmpeg` and `/usr/local/bin/ffmpeg`. FFmpeg is not bundled or downloaded by the app.
+Audio and video conversion requires the optional [FFmpeg](https://ffmpeg.org/) media tool. Image, PDF, document, and file tools work without it. If you use [Homebrew](https://brew.sh/), the Mac package manager, run `brew install ffmpeg` in Terminal. Forma detects `/opt/homebrew/bin/ffmpeg` and `/usr/local/bin/ffmpeg`; the app does not install FFmpeg itself.
 
 ## How to use
 
