@@ -67,7 +67,6 @@ Conversions preserve originals. Existing destination names get numbered suffixes
 ### Processing
 
 - Operations run locally in the background with an activity indicator without a percentage and no mid-operation cancel. Large batches may need significant temporary disk space.
-- PDF passwords are used in memory for the current operation and are never written to app preferences or logs. Clear the password field after use if you share your screen.
 
 ## Build and test
 
@@ -84,6 +83,8 @@ The packaging script creates `dist/Forma.app` and `dist/Forma-macOS.zip` and sig
 Integration tests exercise actual image output dimensions, PDF merge/split/encryption, trim output duration, collision-safe copy/move, invalid batches, recursive destination rejection, document conversion, and ZIP creation.
 
 ## Privacy and license
+
+PDF passwords are used in memory for the current operation and are never written to app preferences or logs. Clear the password field after use if you share your screen.
 
 Forma has no analytics, server, updater, or network client. It invokes local system tools and an independently installed FFmpeg. File selection and output location remain under your control. Review source before handling sensitive files.
 
