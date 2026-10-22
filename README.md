@@ -70,7 +70,9 @@ Conversions preserve originals. Existing destination names get numbered suffixes
 
 ## Build and test
 
-With a current Xcode toolchain (Swift 6 or later):
+Use a current Xcode toolchain (Swift 6 or later). For a Command Line Tools installation without full Xcode, see the [test setup instructions](docs/VALIDATION.md#running-tests-with-command-line-tools).
+
+Run:
 
 ```sh
 swift test
