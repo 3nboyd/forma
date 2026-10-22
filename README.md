@@ -54,7 +54,7 @@ Conversions preserve originals. Existing destination names get numbered suffixes
 
 ## Format support
 
-- Supported output formats are listed in the interface. This is not a universal converter for arbitrary file types.
+- Supported output formats are listed in the interface.
 ### Images
 
 - Image input decoding depends on macOS ImageIO. Animated and multipage image inputs use the first frame only. HEIC output availability depends on the system encoder.
@@ -62,7 +62,7 @@ Conversions preserve originals. Existing destination names get numbered suffixes
 - JPEG uses a white background for transparent images. Quality controls primarily affect lossy formats; lossless formats preserve their encoding characteristics.
 ### PDFs and documents
 
-- PDF text extraction does not perform OCR. Converting a PDF back into an editable Word document is not supported. Unlocking requires the password; it does not crack encryption.
+- PDF text extraction does not perform OCR. Converting a PDF back into an editable Word document is not supported. Unlocking requires the existing password.
 - Document layout fidelity depends on macOS textutil. Complex Office documents may change appearance. External HTML resources are not loaded, and FFmpeg network protocols are disabled. Spreadsheet and presentation conversion, RTFD bundles, archive extraction, and cloud transfers are not supported.
 ### Processing
 
