@@ -35,7 +35,7 @@ This community build is ad-hoc signed, **not Apple-notarized**. macOS may block 
 | PDF to text | Extract selectable text |
 | PDF to images | Render each selected page to PNG or JPEG |
 | Copy files | Copy files and folders to a chosen destination |
-| Move files | Atomically relocate files and folders on the same disk; requires confirmation |
+| Move files | Move files and folders on the same disk without making a second copy; requires confirmation |
 | Create ZIP | Bundle files and folders using macOS ditto |
 
 Audio and video tools require [FFmpeg](https://ffmpeg.org/). Install separately with `brew install ffmpeg`. Forma detects `/opt/homebrew/bin/ffmpeg` and `/usr/local/bin/ffmpeg`. FFmpeg is not bundled or downloaded by the app.
@@ -50,7 +50,7 @@ The action menu exposes the other tools available for the selected files. For a 
 
 ![Embedded folder browser](docs/browser-v2.jpg)
 
-Conversions preserve originals. Existing destination names get numbered suffixes. Failed conversions clean up staged files. Moving uses exclusive atomic filesystem renames, so edits through open file handles follow the moved file. If a batch move fails, Forma attempts to restore completed moves without overwriting anything and reports preserved locations if restoration cannot finish. Moving between disks is intentionally unsupported; copy and verify your files instead.
+Conversions preserve originals. Existing destination names get numbered suffixes. Failed conversions clean up staged files. Moving renames the original file instead of copying and deleting it, so applications with the file open can continue editing it at its new location. If a batch move fails, Forma attempts to restore completed moves without overwriting anything and reports preserved locations if restoration cannot finish. Moving between disks is intentionally unsupported; copy and verify your files instead.
 
 ## Honest limits
 
