@@ -52,14 +52,20 @@ The action menu exposes the other tools available for the selected files. For a 
 
 Conversions preserve originals. Existing destination names get numbered suffixes. Failed conversions clean up staged files. Moving renames the original file instead of copying and deleting it, so applications with the file open can continue editing it at its new location. If a batch move fails, Forma attempts to restore completed moves without overwriting anything and reports preserved locations if restoration cannot finish. Moving between disks is intentionally unsupported; copy and verify your files instead.
 
-## Honest limits
+## Format support
 
 - Supported output formats are listed in the interface. This is not a universal converter for arbitrary file types.
+### Images
+
 - Image input decoding depends on macOS ImageIO. Animated and multipage image inputs use the first frame only. HEIC output availability depends on the system encoder.
 - Crops use centered presets; there is no freehand crop selection. Image exports are rendered through Core Image and are not promised to preserve all HDR, RAW, color-profile, or professional editing information.
 - JPEG uses a white background for transparent images. Quality controls primarily affect lossy formats; lossless formats preserve their encoding characteristics.
+### PDFs and documents
+
 - PDF text extraction does not perform OCR. Converting a PDF back into an editable Word document is not supported. Unlocking requires the password; it does not crack encryption.
 - Document layout fidelity depends on macOS textutil. Complex Office documents may change appearance. External HTML resources are not loaded, and FFmpeg network protocols are disabled. Spreadsheet and presentation conversion, RTFD bundles, archive extraction, and cloud transfers are not supported.
+### Processing
+
 - Operations run locally in the background with an indeterminate activity indicator and no mid-operation cancel. Large batches may need significant temporary disk space.
 - PDF passwords are used in memory for the current operation and are never written to app preferences or logs. Clear the password field after use if you share your screen.
 
